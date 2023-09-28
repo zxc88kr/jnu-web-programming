@@ -1,0 +1,65 @@
+<!--
+    웹프로그래밍및실습 과제 01
+    학번 : 195443
+    이름 : 박찬
+-->
+
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>195443 박찬</title>
+        <meta charset="utf-8">
+        <style>
+            body {
+                background-color: linen;
+                color: green;
+            }
+            h3 {
+                color: darkred;
+                text-align: center;
+                font-size: 2em;
+            }
+            span {
+                font-weight: bold;
+                text-decoration: underline;
+            }
+            hr {
+                height: 3px;
+                background-color: darkblue;
+                border: solid darkblue;
+            }
+        </style>
+        <script>
+            function show() {
+                let img = document.getElementById("profileImg");
+                img.src = "../media/박찬.jpg";
+            }
+            function hide() {
+                let img = document.getElementById("profileImg");
+                img.src = "";
+            }
+        </script>
+    </head>
+    <body>
+        <h3 onmouseover="show();" onmouseout="hide();">박찬</h3><hr>
+        <img id="profileImg" src="" width="120"><br>
+        <h2>자기 소개</h2>
+
+        안녕하세요. 저는 소프트웨어공학과 19학번(195443) <span>박찬</span>입니다.<br>
+        저는 단순히 <span>컴퓨터를 다루는 것이 좋아서</span> 해당 학과에 진학하게 되었습니다.<br>
+        제가 희망하는 직무는 <span>백엔드</span>이고, 최종적인 목표는 <span>데이터베이스 관리자</span> 혹은 <span>서버 보안</span> 담당입니다.<br>
+        현재 외부 교육기관인 <span>카카오테크캠퍼스</span>에서 활동 중이며, 11월 중으로 웹 서비스 출시를 앞두고 있습니다.<br>
+
+        <h2>기술 역량</h2>
+
+        저는 <span>리눅스 운영체제</span>를 사용한 다양한 경험이 있습니다.<br>
+        우선 리눅스 기반의 OS를 사용하면서 네트워크의 보안과 관련된 취약점을 분석하고 위협에 대처할 수 있었으며,<br>
+        <span>리눅스 마스터 1급</span> 자격증을 도전하면서, 리눅스 시스템에 대한 전문적인 이해를 갖추게 되었습니다.<br>
+        또한, 간단한 APM 서버를 구축하면서, 서버와 클라이언트 간의 연결 및 데이터 전송, 서버의 리소스 관리 등의 작업을 수행할 수 있었습니다.<br><br>
+
+        저는 <span>프론트엔드</span>에 대한 기초적인 지식도 보유하고 있습니다.<br>
+        HTML, CSS, JavaScript를 사용하여 간단한 웹 페이지를 구성할 수 있고, 사용자의 경험을 개선하는 기술에 관심이 있습니다.<br>
+        이러한 관심은 <span>웹디자인기능사</span> 자격증을 준비하던 시점부터 생겨나기 시작했습니다.<br>
+        아직은 Vanilla JS만 활용할 수 있는 수준이지만, 앞으로 계속해서 다양한 프레임워크를 경험하는 것이 제 목표입니다.<br>
+    </body>
+</html>
