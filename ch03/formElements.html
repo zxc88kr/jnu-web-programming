@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>폼 요소들</title>
+</head>
+<body>
+    <h3>Form Elements</h3>
+    <hr>
+    <form>
+        텍스트<br>
+        <datalist id="capitals">
+            <option>서울</option>
+            <option>도쿄</option>
+            <option>베이징</option>
+        </datalist>
+        수도: <input type="text" list="capitals"> &nbsp;&nbsp;
+        설명: <textarea rows="3" cols="30"></textarea><br>
+        암호: <input type="password">
+        <br><br>
+
+        버튼들<br>
+        <button type="button">버튼</button> &nbsp;&nbsp;
+        <button type="submit">제출</button> &nbsp;&nbsp;
+        <button type="reset">지우기</button> &nbsp;&nbsp;
+        <button type="button">
+            <img src="../media/Naver.png" width="20">
+        </button>
+        <br><br>
+
+        <input type="button" value="버튼"> &nbsp;&nbsp;
+        <input type="submit" value="제출"> &nbsp;&nbsp;
+        <input type="reset" value="지우기"> &nbsp;&nbsp;
+        <input type="image" src="../media/Naver.png" width="20">
+        <br><br>
+
+        선택형 입력<br>
+        요리<br>
+        짜장면<input name="food" type="radio" value="food1"> &nbsp;&nbsp;
+        짬뽕<input name="food" type="radio" value="food2"> &nbsp;&nbsp;
+        우동<input name="food" type="radio" value="food3"> &nbsp;&nbsp;
+        <br><br>
+
+        음료수<br>
+        콜라<input name="drink" type="checkbox" value="drink1"> &nbsp;&nbsp;
+        <label>
+            사이다<input name="drink" type="checkbox" value="drink2"> &nbsp;&nbsp;
+        </label>
+        <label for="drink3">냉수</label>
+        <input id="drink3" name="drink" type="checkbox" value="drink3"> &nbsp;&nbsp;
+        <br><br>
+
+        <select name="dessert">
+            <option value="icecream">아이스크림</option>
+            <option value="coffee">커피</option>
+        </select>
+        <br><br>
+
+        색깔: <input name="myfavoritecolor" type="color" value="#AAAAAA">
+        <br><br>
+
+        시간과 날짜<br>
+        <input type="date"> &nbsp;&nbsp;
+        <input type="time"> &nbsp;&nbsp;
+        <input type="datetime-local"> &nbsp;&nbsp;
+        <br><br>
+
+        숫자 관련<br>
+        <input type="number" min="0" max="1" step="0.2" value="0.2"> &nbsp;&nbsp;
+        <input type="range" min="0" max="1" step="0.2" value="0.2"> &nbsp;&nbsp;
+        <br><br>
+
+        형식이 있는 텍스트 입력<br>
+        email: <input type="email" placeholder="id@host"><br>
+        홈페이지: <input type="url" placeholder="http://"><br>
+        전화번호: <input type="tel" placeholder="010-1234-5678"><br>
+    </form>
+</body>
+</html>
