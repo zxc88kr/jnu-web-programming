@@ -6,16 +6,18 @@
 </head>
 <body>
 	<script>
-		let user = prompt("숫자 입력");
-		let num = window.parseInt(user);
-		let small = num % 10;
+		let str = prompt("숫자 입력");
+		let num = parseInt(str);
+		let least = num % 10;
 		while (num >= 10) {
 			num = Math.floor(num / 10);
 		}
-		if (small == num) {
-			document.write(user + ": 같음");
+		document.write("<h3>큰 자리수와 낮은 자리수 비교</h3>");
+		document.write("<hr>");
+		if (num == least) {
+			document.write(str + ": 같음");
 		} else {
-			document.write(user + ": 다름");
+			document.write(str + ": 다름");
 		}
 	</script>
 </body>
