@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>17개의 CSS 색이름과 색</title>
+	<style>
+		span {
+			display: inline-block;
+			width: 100px;
+			text-align: center;
+		}
+	</style>
+</head>
+<body>
+	<h2>17개의 CSS 색이름과 색</h2>
+	<hr>
+	<script>
+		let colornames = ["maroon", "red", "orange", "yellow", "olive"];
+		for (let color of colornames) {
+			let sstr = `<span style="background-color:${color}">${color}</span>`;
+			document.write(sstr);
+		}
+	</script>
+</body>
+</html>

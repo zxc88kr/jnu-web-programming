@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>난수 10개 생성</title>
+</head>
+<body>
+	<h3>난수 10개 생성</h3>
+	<hr>
+	<script>
+		let plots = [];
+		for (let i = 0; i < 10; i++) {
+			let rnd = Math.floor(Math.random() * 100) + 1;
+			plots.push(rnd);
+		}
+		for (let ele of plots) {
+			document.write(ele + " ");
+		}
+		document.write("<hr>");
+
+		document.write(plots.join(" "));
+		document.write("<hr>");
+
+		let big = plots.reduce((ele, acc) => ele > acc ? ele : acc, plots[0]);
+		document.write("제일 큰 수는 " + big);
+		document.write("<hr>");
+
+		plots.sort((a, b) => a - b);
+		document.write(plots.join(" "));
+	</script>
+</body>
+</html>

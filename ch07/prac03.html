@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+</head>
+<body>
+	<script>
+		let now = new Date();
+		document.write("<h2>" + now.toLocaleDateString() + "</h2>");
+		if (now.getHours() >= 12) {
+			document.body.style.backgroundColor = "orange";
+		} else {
+			document.body.style.backgroundColor = "lightskyblue";
+		}
+	</script>
+</body>
+</html>
