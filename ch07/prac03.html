@@ -2,17 +2,23 @@
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-	<title>Document</title>
+	<title>방문 시간에 따라 변하는 배경색</title>
 </head>
 <body>
+	<h3>오전이면 lightskyblue, 오후이면 orange 배경</h3>
+	<hr>
 	<script>
 		let now = new Date();
-		document.write("<h2>" + now.toLocaleDateString() + "</h2>");
 		if (now.getHours() >= 12) {
 			document.body.style.backgroundColor = "orange";
 		} else {
 			document.body.style.backgroundColor = "lightskyblue";
 		}
+
+		document.write("현재 시간: ");
+		document.write(now.getHours(), "시, ");
+		document.write(now.getMinutes(), "분, ");
+		document.write(now.getSeconds(), "초<br>");
 	</script>
 </body>
 </html>

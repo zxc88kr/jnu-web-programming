@@ -2,30 +2,30 @@
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-	<title>Book 객체 만들기</title>
+	<title>book 객체 만들기</title>
 </head>
 <body>
-	<h2>Book 객체 만들기</h2>
+	<h3>book 객체 만들기</h3>
 	<hr>
 	<script>
-		let b1 = {
+		let b1 = new Object();
+		b1.title = "HTML5";
+		b1.author = "황기태";
+		b1.price = 20000;
+		b1.toString = function() {
+			return `${this.title}, ${this.author}, ${this.price}`;
+		}
+		document.write("book: " + b1.toString() + "<hr>");
+
+		let b2 = {
 			title: "HTML5",
-			author: "kitae",
+			author: "황기태",
 			price: 20000,
 			toString: function() {
 				return `${this.title}, ${this.author}, ${this.price}`;
 			}
 		};
-		document.write("book: " + b1.toString() + "<hr>");
-
-		let b2 = new Object();
-		b2.title = "HTML4";
-		b2.author = "wonsun";
-		b2.price = 30000;
-		b2.toString = function() {
-			return `${this.title}, ${this.author}, ${this.price}`;
-		}
-		document.write("book: " + b2.toString + "<hr>");
+		document.write("book: " + b2.toString() + "<hr>");
 
 		function Book(title, author, price) {
 			this.title = title;
@@ -35,21 +35,8 @@
 				return `${this.title}, ${this.author}, ${this.price}`;
 			}
 		}
-		let b3 = new Book("HTML3", "hwang", 45000);
-		document.write("book: " + b3.toString + "<hr>");
-
-		class Book2 {
-			constructor(title, author, price) {
-				this.title = title;
-				this.author = author;
-				this.price = price;
-			}
-			toString() {
-				return `${this.title}, ${this.author}, ${this.price}`;
-			}
-		}
-		let b4 = new Book("HTML2", "park", 200000);
-		document.write("book: " + b4.toString + "<hr>");
+		let b3 = new Book("HTML5", "황기태", 20000);
+		document.write("book: " + b3.toString() + "<hr>");
 	</script>
 </body>
 </html>

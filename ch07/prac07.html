@@ -2,22 +2,24 @@
 <html lang="ko">
 <head>
 	<meta charset="UTF-8">
-	<title>17개의 CSS 색이름과 색</title>
+	<title>17개의 CSS2 색이름과 색</title>
 	<style>
-		span {
+		div {
 			display: inline-block;
-			width: 100px;
-			text-align: center;
+			width: 60px;
+			padding: 10px;
 		}
 	</style>
 </head>
 <body>
-	<h2>17개의 CSS 색이름과 색</h2>
+	<h3>17개의 CSS2 색이름과 색</h3>
 	<hr>
 	<script>
-		let colornames = ["maroon", "red", "orange", "yellow", "olive"];
-		for (let color of colornames) {
-			let sstr = `<span style="background-color:${color}">${color}</span>`;
+		let colorNames = ["maroon", "red", "orange", "yellow", "olive", "purple",
+						  "fuchsia", "white", "lime", "green", "navy", "blue",
+						  "aqua", "teal", "black", "silver", "gray"];
+		for (let colorName of colorNames) {
+			let sstr = `<div style="background-color:${colorName}">${colorName}</div>`;
 			document.write(sstr);
 		}
 	</script>
