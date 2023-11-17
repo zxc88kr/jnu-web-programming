@@ -16,7 +16,7 @@
 		document.write(plots.join(" "));
 		document.write("<hr>");
 
-		let big = plots.reduce((ele, acc) => ele > acc ? ele : acc, plots[0]);
+		let big = plots.reduce((acc, ele) => acc > ele ? acc : ele, plots[0]);
 		document.write("제일 큰 수는 " + big);
 		document.write("<hr>");
 
