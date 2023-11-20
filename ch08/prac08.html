@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>transform:scale()</title>
+	<style>
+		img {
+			margin-left: 50px;
+		}
+	</style>
+	<script>
+		let curTimes = 1;
+		function scale(obj) {
+			curTimes++;
+			obj.style.transform = `scaleX(${curTimes})`;
+		}
+	</script>
+</head>
+<body>
+	<h3>클릭하면 2, 3, 4배로 옆으로 늘어납니다.</h3>
+	<hr>
+	<img src="../media/Sponge_Bob.png" width="150" alt="SpongeBob" onclick="scale(this);">
+</body>
+</html>
