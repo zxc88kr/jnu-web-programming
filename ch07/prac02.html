@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>정수 5개 입력받아 역순으로 출력</title>
+</head>
+<body>
+	<h3>정수 5개 입력받아 역순으로 출력</h3>
+	<hr>
+	<script>
+		let nums = [];
+		for (let i = 0; i < 5; i++) {
+			let num = prompt("정수 입력");
+			nums.push(num);
+		}
+		document.write("입력된 수의 배열<br>");
+		document.write(nums.join(" "));
+		document.write("<hr>");
+
+		nums.reverse();
+		document.write("역순으로 재정렬된 배열<br>");
+		document.write(nums.join(" "));
+	</script>
+</body>
+</html>

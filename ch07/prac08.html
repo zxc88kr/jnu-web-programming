@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>Math.random()으로 랜덤한 색 만들기</title>
+	<style>
+		div {
+			display: inline-block;
+			width: 150px;
+			padding: 10px;
+		}
+	</style>
+</head>
+<body>
+	<h3>16개의 랜덤한 색 만들기</h3>
+	<hr>
+	<script>
+		let colorNames = [];
+		for (let i = 0; i < 16; i++) {
+			let r = Math.floor(Math.random() * 256);
+			let g = Math.floor(Math.random() * 256);
+			let b = Math.floor(Math.random() * 256);
+			colorNames.push(`rgb(${r},${g},${b})`);
+		}
+		for (let colorName of colorNames) {
+			let sstr = `<div style="background-color:${colorName}">${colorName}</div>`;
+			document.write(sstr);
+		}
+	</script>
+</body>
+</html>
