@@ -3,17 +3,18 @@ const path = require("path");
 const app = express();
 
 app.use(express.static("./public/"));
+app.set("view engine", "ejs");
 app.get("/", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "views/index.html"));
+    res.render("index");
 })
 app.get("/post", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "views/post.html"));
+    res.render("post");
 })
 app.get("/about", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "views/about.html"));
+    res.render("about");
 })
 app.get("/contact", (req, res) => {
-    res.sendFile(path.resolve(__dirname, "views/contact.html"));
+    res.render("contact");
 })
 app.listen(3300, () => {
     console.log("server on port 3300")
