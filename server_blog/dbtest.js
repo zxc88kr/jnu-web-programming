@@ -14,6 +14,12 @@ userModel.create([
     age: 44,
     address: "Seoul"
 }
-]).then(result => {
-    console.log(result);
+]).then(data => {
+    console.log(data);
+});
+
+userModel.find({
+    id:/ChanPark2/
+}).then(data => {
+    console.log(data);
 });
