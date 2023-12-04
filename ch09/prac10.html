@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>계산기 만들기</title>
+	<style>
+		td {
+			padding: 0px 12px;
+		}
+		input[type=button] {
+			text-align: center;
+			width: 60px;
+			padding: 2px;
+		}
+	</style>
+	<script>
+		function nback() {
+			let input = document.querySelector("#input");
+			input.value = input.value.slice(0, -1);
+		}
+		function nclear() {
+			let input = document.querySelector("#input");
+			input.value = "0";
+		}
+		function ncalc() {
+			let input = document.querySelector("#input");
+			input.value = eval(input.value);
+		}
+		function nput(e) {
+			let input = document.querySelector("#input");
+			if (input.value == "0") nback();
+			input.value += e.target.value;
+		}
+	</script>
+</head>
+<body>
+	<h3>계산기 만들기</h3>
+	<hr>
+	<table>
+		<tr>
+			<td colspan="4"><input type="text" id="input" value="0" style="width:98%;"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="BACK" onclick="nback()"></td>
+			<td><input type="button" value="CE" onclick="nclear()"></td>
+			<td><input type="button" value="C" onclick="nclear()"></td>
+			<td><input type="button" value="=" onclick="ncalc()"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="7" onclick="nput(event)"></td>
+			<td><input type="button" value="8" onclick="nput(event)"></td>
+			<td><input type="button" value="9" onclick="nput(event)"></td>
+			<td><input type="button" value="/" onclick="nput(event)"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="4" onclick="nput(event)"></td>
+			<td><input type="button" value="5" onclick="nput(event)"></td>
+			<td><input type="button" value="6" onclick="nput(event)"></td>
+			<td><input type="button" value="*" onclick="nput(event)"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="1" onclick="nput(event)"></td>
+			<td><input type="button" value="2" onclick="nput(event)"></td>
+			<td><input type="button" value="3" onclick="nput(event)"></td>
+			<td><input type="button" value="-" onclick="nput(event)"></td>
+		</tr>
+		<tr>
+			<td><input type="button" value="0" onclick="nput(event)"></td>
+			<td><input type="button" value="+" onclick="nput(event)"></td>
+			<td><input type="button" value="NONE"></td>
+			<td><input type="button" value="NONE"></td>
+		</tr>
+	</table>
+</body>
+</html>
