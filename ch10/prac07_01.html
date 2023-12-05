@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>산수를 풀어봅시다</title>
+	<style>
+		.question {
+			width: 60px;
+		}
+	</style>
+	<script>
+		function mark() {
+			let questions = document.querySelectorAll(".question");
+			let answers = document.querySelectorAll(".answer");
+			let score = document.querySelector("#score");
+
+			let n = 0;
+			for (let i = 0; i < questions.length; i++) {
+				let question = questions[i].innerHTML;
+				let answer = answers[i].value;
+
+				if (answer == "" || isNaN(answer)) {
+					questions[i].style.textDecoration = "line-through";
+				} else if (eval(question) == parseInt(answer)) {
+					questions[i].style.textDecoration = "none";
+					n++;
+				} else {
+					questions[i].style.textDecoration = "line-through";
+				}
+			}
+			score.innerHTML = n;
+		}
+	</script>
+</head>
+<body>
+	<h3>산수 문제를 풀어봅시다.</h3>
+	<p>수식을 계산하여 답을 입력하고 채점 버튼을 누르세요.</p>
+	<hr>
+	<table>
+		<tr>
+			<td><div class="question">5*6</div></td>
+			<td><input class="answer" type="text" size="8"></td>
+		</tr>
+		<tr>
+			<td><div class="question">7+5*3</div></td>
+			<td><input class="answer" type="text" size="8"></td>
+		</tr>
+		<tr>
+			<td><div class="question">23*2</div></td>
+			<td><input class="answer" type="text" size="8"></td>
+		</tr>
+		<tr>
+			<td><div class="question">35-7</div></td>
+			<td><input class="answer" type="text" size="8"></td>
+		</tr>
+		<tr>
+			<td><button type="button" onclick="mark();">채점</button></td>
+			<td><span id="score">0</span></td>
+		</tr>
+	</table>
+</body>
+</html>

@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>setTimeout()/clearTimeout()</title>
+	<style>
+        #clock {
+            display: inline-block;
+            width: 200px;
+            background-color: lightskyblue;
+            border: 1px solid darkgray;
+        }
+    </style>
+	<script>
+		let clock;
+		let timerID;
+
+		function startClock() {
+			clock = document.querySelector("#clock");
+			showClock();
+        }
+		function showClock() {
+            let now = new Date();
+            clock.innerHTML = now.toLocaleTimeString();
+
+			timerID = setTimeout("showClock()", 1000);
+			clock.onclick = function() {
+				clearTimeout(timerID);
+			}
+        }
+	</script>
+</head>
+<body onload="startClock();">
+	<h3>div 태그에 시계 만들기</h3>
+	<hr>
+	<div id="clock"></div>
+</body>
+</html>
