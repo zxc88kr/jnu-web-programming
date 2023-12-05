@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+	<meta charset="UTF-8">
+	<title>산수를 풀어봅시다</title>
+	<style>
+		.question {
+			width: 60px;
+		}
+	</style>
+	<script>
+		let count;
+		let timerID;
+
+		function countdown() {
+			let timer = document.querySelector("#timer");
+			timer.innerHTML = count;
+			if (count > 0) {
+				timerID = setTimeout(countdown, 1000);
+				count--;
+			} else {
+				mark();
+			}
+		}
+
+		function mark() {
+			let questions = document.querySelectorAll(".question");
+			let answers = document.querySelectorAll(".answer");
+			let score = document.querySelector("#score");
+
+			let n = 0;
+			for (let i = 0; i < questions.length; i++) {
+				let question = questions[i].innerHTML;
+				let answer = answers[i].value;
+
+				if (answer == "" || isNaN(answer)) {
+					questions[i].style.textDecoration = "line-through";
+				} else if (Math.floor(eval(question)) == parseInt(answer)) {
+					questions[i].style.textDecoration = "none";
+					n++;
+				} else {
+					questions[i].style.textDecoration = "line-through";
+				}
+			}
+			score.innerHTML = n;
+		}
+
+		function restart() {
+			let questions = document.querySelectorAll(".question");
+			let answers = document.querySelectorAll(".answer");
+			let score = document.querySelector("#score");
+
+			let ops = ["+", "-", "*", "/"];
+			for (let i = 0; i < questions.length; i++) {
+				let a = Math.floor(Math.random() * 100) + 1;
+				let b = Math.floor(Math.random() * 100) + 1;
+				let op = ops[Math.floor(Math.random() * 4)];
+
+				questions[i].innerHTML = a + op + b;
+				questions[i].style.textDecoration = "none";
+				answers[i].value = "";
+			}
+			score.innerHTML = 0;
+
+			count = 10;
+			clearTimeout(timerID);
+			countdown();
+		}
+	</script>
+</head>
+<body onload="restart();">
+	<h3>산수 문제를 풀어봅시다.</h3>
+	<p>
+		문제는 자동으로 생성되며, 10초가 지나면 자동 채점됩니다.<br>
+		남은 시간 <span id="timer">10</span>
+	</p>
+	<hr>
+	<table>
+		<tr>
+			<td><div class="question">5*6</div></td>
+			<td><input class="answer" type="text" size="8"></td>
+		</tr>
+		<tr>
+			<td><div class="question">7+5*3</div></td>
+			<td><input class="answer" type="text" size="8"></td>
+		</tr>
+		<tr>
+			<td><div class="question">23*2</div></td>
+			<td><input class="answer" type="text" size="8"></td>
+		</tr>
+		<tr>
+			<td><div class="question">35-7</div></td>
+			<td><input class="answer" type="text" size="8"></td>
+		</tr>
+		<tr>
+			<td><button id="re" type="button" onclick="restart();">다시</button></td>
+			<td><span id="score">0</span></td>
+		</tr>
+	</table>
+</body>
+</html>
