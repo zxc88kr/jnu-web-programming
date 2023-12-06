@@ -10,6 +10,9 @@ app.get("/", (req, res) => {
 app.get("/post", (req, res) => {
     res.render("post");
 })
+app.get("/post/new", (req, res) => {
+    res.render("create");
+})
 app.get("/about", (req, res) => {
     res.render("about");
 })
