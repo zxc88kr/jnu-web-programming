@@ -1,7 +1,15 @@
 const mongoose = require("mongoose");
 const blogPostSchema = new mongoose.Schema({
+    name: {
+        type: String,
+        default: "익명"
+    },
     title: String,
-    body: String
+    body: String,
+    date: {
+        type: Date,
+        default: new Date()
+    }
 });
 
 const blogPostModel = mongoose.model("BlogPost", blogPostSchema);

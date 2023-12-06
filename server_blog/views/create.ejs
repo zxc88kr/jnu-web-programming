@@ -33,7 +33,11 @@
                             <!-- to get an API token!-->
                             <form id="newPostForm" action="/post/store" method="post">
                                 <div class="form-floating">
-                                    <input class="form-control" id='title' name="title" type="text" />
+                                    <input class="form-control" id="name" name="name" type="text" />
+                                    <label for="name">이름</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="title" name="title" type="text" />
                                     <label for="title">제목</label>
                                 </div>
                                 <div class="form-floating">
