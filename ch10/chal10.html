@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <title>눈 내리는 샤갈의 마을</title>
+    <style>
+        body {
+            background-image: url("../media/Chagall.jpg");
+            background-size: 100%;
+            background-repeat: no-repeat;
+            overflow: hidden;
+        }
+        .snow {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            top: -40px;
+            text-align: center;
+            color: #ffffff;
+        }
+        @keyframes snows {
+            0% {
+                opacity: 0;
+                transform: translate(0px, 0vh);
+            }
+            20% {
+                opacity: 1;
+                transform: translate(-15px, 20vh);
+            }
+            40% {
+                opacity: 1;
+                transform: translate(15px, 40vh);
+            }
+            60% {
+                opacity: 1;
+                transform: translate(-15px, 60vh);
+            }
+            80% {
+                opacity: 1;
+                transform: translate(15px, 80vh);
+            }
+            100% {
+                opacity: 0;
+                transform: translate(0px, 100vh);
+            }
+        }
+	</style>
+</head>
+<body>
+    <script>
+        function createSnow() {
+            let snow = document.createElement("div");
+
+            let position = Math.floor(Math.random() * window.innerWidth);
+            let size = Math.random() + 2;
+            let duration = Math.random() * 5 + 10;
+            let delay = Math.random() * 5;
+
+            snow.innerHTML = "*";
+            snow.classList.add("snow");
+
+            snow.style.left = `${position}px`;
+            snow.style.fontSize = `${size}em`;
+            snow.style.animation = `snows ${duration}s linear`;
+            snow.style.animationDelay = `${delay}s`;
+
+            document.body.appendChild(snow);
+
+            setTimeout(() => {
+                document.body.removeChild(snow);
+                createSnow();
+            }, (duration + delay) * 1000);
+        }
+        for (let i = 0; i < 30; i++) {
+            setTimeout(createSnow, i * 500);
+        }
+    </script>
+</body>
+</html>
