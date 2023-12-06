@@ -10,8 +10,8 @@ userModel.create([
     address: "Gwangju"
 },
 {
-    id: "ChanPark2",
-    age: 44,
+    id: "HyunPark",
+    age: 59,
     address: "Seoul"
 }
 ]).then(data => {
