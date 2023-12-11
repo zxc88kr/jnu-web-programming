@@ -7,11 +7,21 @@ const fileUpload = require("express-fileupload");
 const mongoose = require("mongoose");
 const blogPostModel = require("./models/blogPostModel");
 
+/*
+const formValidMW = (req, res, next) => {
+    if (req.files == null || req.body.title == null || req.body.body == null) {
+        return res.redirect("/post/new");
+    }
+    next();
+}
+*/
+
 mongoose.connect("mongodb://localhost/blogDB");
 
 app.use(express.static("./public/"));
 app.use(fileUpload());
 app.use(express.urlencoded({extended: true}));
+//app.use("/post/new", formValidMW);
 app.set("view engine", "ejs");
 
 app.get("/", async (req, res) => {
