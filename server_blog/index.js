@@ -1,4 +1,5 @@
 const express = require("express");
+const path = require("path");
 const app = express();
 
 const fileUpload = require("express-fileupload");
@@ -28,9 +29,17 @@ app.get("/post/:id", async (req, res) => {
 })
 
 app.post("/post/store", async (req, res) => {
-    const data = await blogPostModel.create(req.body);
-    console.log(data);
-    res.redirect('/');
+    const image = req.files.image;
+    image.mv(path.resolve(__dirname, "public/images/", image.name), async (err) => {
+        if (err) {
+            console.log(err);
+        } 
+        await blogPostModel.create({
+            ...req.body,
+            image: "/images/" + image.name
+        });
+        res.redirect("/");
+    });
 });
 
 app.get("/about", (req, res) => {
