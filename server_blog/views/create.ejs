@@ -31,7 +31,7 @@
                             <!-- To make this form functional, sign up at-->
                             <!-- https://startbootstrap.com/solution/contact-forms-->
                             <!-- to get an API token!-->
-                            <form id="newPostForm" action="/post/store" method="post">
+                            <form id="newPostForm" action="/post/store" method="post" enctype="multipart/form-data">
                                 <div class="form-floating">
                                     <input class="form-control" id="name" name="name" type="text" />
                                     <label for="name">이름</label>
@@ -43,6 +43,10 @@
                                 <div class="form-floating">
                                     <textarea class="form-control" id="body" name="body" placeholder="Enter your message here..." style="height: 12rem" data-sb-validations="required"></textarea>
                                     <label for="body">내용</label>
+                                </div>
+                                <div class="form-floating">
+                                    <input class="form-control" id="body" name="image" type="file"></input>
+                                    <label for="image">이미지</label>
                                 </div>
                                 <br />
                                 <!-- Submit success message-->

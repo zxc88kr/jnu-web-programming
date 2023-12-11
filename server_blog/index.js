@@ -1,12 +1,15 @@
 const express = require("express");
 const app = express();
 
+const fileUpload = require("express-fileupload");
+
 const mongoose = require("mongoose");
 const blogPostModel = require("./models/blogPostModel");
 
 mongoose.connect("mongodb://localhost/blogDB");
 
 app.use(express.static("./public/"));
+app.use(fileUpload());
 app.use(express.urlencoded({extended: true}));
 app.set("view engine", "ejs");
 
